@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ViewContactRequestComponent } from './view-contact-request.component';
 
 describe('ViewContactRequestComponent', () => {
@@ -8,7 +8,7 @@ describe('ViewContactRequestComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ViewContactRequestComponent]
+      imports: [ViewContactRequestComponent, HttpClientTestingModule]
     })
     .compileComponents();
 
