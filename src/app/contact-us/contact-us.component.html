@@ -1,0 +1,27 @@
+<h1>CONTACT US</h1>
+<h3>Initialize request protocol for specialized IT consulting or tactical staffing solutions. Our team will analyze your requirements and provide precision-oriented software development services.</h3>
+<form #contactForm="ngForm" (ngSubmit)="submitRequest()" novalidate>
+  <label>
+    Name
+    <input name="name" [(ngModel)]="contactRequest.name" autocomplete="name" required /> 
+  </label><br/>
+  <label>
+    Work Email
+    <input name="email" [(ngModel)]="contactRequest.email" type="email" autocomplete="email" required />
+  </label><br/>
+  <label>
+    I’m interested in
+    <select name="interest" [(ngModel)]="contactRequest.interest" required>
+      <option value="">Select one</option>
+      <option>Staffing / Team Augmentation</option>
+      <option>Custom Software Development</option>
+      <option>Both</option>
+      <option>Other</option>
+    </select>
+  </label><br/>
+  <label>Details</label><br/>
+  <textarea name="message" [(ngModel)]="contactRequest.message" rows="5" placeholder="Roles needed, timeline, project goals, etc." required></textarea><br/>
+  <button class="btn btn-primary" type="button" (click)="backHome()">Back</button>
+  <button class="btn btn-primary" type="button" (click)="reset()">Reset</button>
+  <button class="btn btn-primary" type="submit" [disabled]="contactForm.invalid">Send</button>
+</form>
