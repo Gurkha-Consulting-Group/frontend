@@ -1,7 +1,7 @@
 /* iPhone Glass Theme - Glassmorphism */
 .view-contact-request-container {
   width: 100%;
-  padding: 1.5rem;
+  padding: clamp(1rem, 3vw, 1.75rem);
   box-sizing: border-box;
 }
 
@@ -14,21 +14,22 @@
   border-radius: 20px;
   border: 1px solid rgba(255, 255, 255, 0.5);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.08);
-  padding: 1.5rem;
+  padding: clamp(1rem, 3vw, 1.75rem);
   box-sizing: border-box;
   margin: 0;
 }
 
 .card-header h1 {
   margin: 0 0 0.5rem 0;
-  font-size: 1.75rem;
+  font-size: clamp(1.5rem, 3.2vw, 2rem);
+  line-height: 1.2;
   color: #0f172a;
 }
 
 .card-header .lead {
   margin: 0 0 1rem 0;
   color: #475569;
-  font-size: 0.95rem;
+  font-size: clamp(0.95rem, 2.2vw, 1.05rem);
 }
 
 /* Compact, clean table styles for contact requests */
@@ -40,6 +41,13 @@
   color: #1f2937;
   overflow: hidden;
   border-radius: 12px;
+  min-width: 560px;
+}
+
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .contact-table thead th {
@@ -96,9 +104,13 @@
   display: flex;
   gap: 0.6rem;
   margin-top: 1.5rem;
+  flex-wrap: wrap;
+  flex-direction: column;
 }
 
 .btn {
+  width: 100%;
+  min-height: 44px;
   padding: 0.65rem 1rem;
   border-radius: 12px;
   font-weight: 600;
@@ -145,5 +157,15 @@
   
   .compact {
     max-width: 120px;
+  }
+}
+
+@media (min-width: 768px) {
+  .actions {
+    flex-direction: row;
+  }
+
+  .btn {
+    width: auto;
   }
 }

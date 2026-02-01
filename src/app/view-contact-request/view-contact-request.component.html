@@ -5,29 +5,31 @@
   </div>
 
   @if (contactRequests && contactRequests.length > 0) {
-    <table class="contact-table">
-      <thead>
-        <tr>
-          <th>ID</th>
-          <th>Name</th>
-          <th>Email</th>
-          <th>Interest</th>
-          <th>Message</th>
-        </tr>
-      </thead>
-
-      <tbody>
-        @for (contactRequest of contactRequests; track contactRequest.id) {
+    <div class="table-wrapper">
+      <table class="contact-table">
+        <thead>
           <tr>
-            <td class="compact">{{contactRequest.id}}</td>
-            <td class="compact">{{contactRequest.name}}</td>
-            <td class="compact">{{contactRequest.email}}</td>
-            <td class="compact">{{contactRequest.interest}}</td>
-            <td>{{contactRequest.message}}</td>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Interest</th>
+            <th>Message</th>
           </tr>
-        }
-      </tbody>
-    </table>
+        </thead>
+
+        <tbody>
+          @for (contactRequest of contactRequests; track contactRequest.id) {
+            <tr>
+              <td class="compact">{{contactRequest.id}}</td>
+              <td class="compact">{{contactRequest.name}}</td>
+              <td class="compact">{{contactRequest.email}}</td>
+              <td class="compact">{{contactRequest.interest}}</td>
+              <td>{{contactRequest.message}}</td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
   }
 
   <div class="actions">

@@ -8,20 +8,21 @@
   border-radius: 20px;
   border: 1px solid rgba(255, 255, 255, 0.5);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.08);
-  padding: 1.5rem;
+  padding: clamp(1rem, 3vw, 1.75rem);
   box-sizing: border-box;
   margin: 0;
 }
 
 .card-header h1 {
   margin: 0 0 0.5rem 0;
-  font-size: 1.75rem;
+  font-size: clamp(1.5rem, 3.2vw, 2rem);
+  line-height: 1.2;
   color: #0f172a;
 }
 .card-header .lead {
   margin: 0 0 1rem 0;
   color: #475569;
-  font-size: 0.95rem;
+  font-size: clamp(0.95rem, 2.2vw, 1.05rem);
 }
 
 .contact-form .row {
@@ -38,13 +39,14 @@
 .label { display: block; font-weight: 600; margin-bottom: 0.35rem; color: #0f172a; }
 .input, .select, .textarea {
   width: 100%;
+  min-height: 44px;
   padding: 0.65rem 0.9rem;
   border-radius: 12px;
   background: rgba(255, 255, 255, 0.6);
   backdrop-filter: blur(10px);
   border: 1px solid #e6eefc;
   outline: none;
-  font-size: 0.95rem;
+  font-size: clamp(0.95rem, 2.2vw, 1rem);
   color: #0b1220;
   box-sizing: border-box;
   transition: all 0.2s ease;
@@ -80,9 +82,12 @@
   gap: 0.75rem;
   margin-top: 1rem;
   flex-wrap: wrap;
+  flex-direction: column;
 }
 
 .btn {
+  width: 100%;
+  min-height: 44px;
   padding: 0.55rem 0.9rem;
   border-radius: 12px;
   font-weight: 600;
@@ -132,3 +137,13 @@
 }
 
 .lead, .contact-card p { line-height: 1.4; }
+
+@media (min-width: 768px) {
+  .actions {
+    flex-direction: row;
+  }
+
+  .btn {
+    width: auto;
+  }
+}

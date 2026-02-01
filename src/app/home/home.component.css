@@ -8,20 +8,21 @@
   border-radius: 20px;
   border: 1px solid rgba(255, 255, 255, 0.5);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.08);
-  padding: 1.5rem;
+  padding: clamp(1rem, 3vw, 1.75rem);
   box-sizing: border-box;
   margin: 0;
 }
 
 .card-header h1 {
   margin: 0 0 0.5rem 0;
-  font-size: 1.75rem;
+  font-size: clamp(1.5rem, 3.2vw, 2rem);
+  line-height: 1.2;
   color: #0f172a;
 }
 .card-header .lead {
   margin: 0 0 1rem 0;
   color: #475569;
-  font-size: 0.95rem;
+  font-size: clamp(0.95rem, 2.2vw, 1.05rem);
 }
 
 .contact-form .row {
@@ -135,5 +136,5 @@
 
 .status-alert {
   color: #dc2626;
-  font-size: 1.5rem;
+  font-size: clamp(1.05rem, 2.6vw, 1.5rem);
 }
