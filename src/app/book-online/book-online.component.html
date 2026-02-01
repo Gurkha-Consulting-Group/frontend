@@ -3,23 +3,24 @@
 		<h1>Book Online</h1>
 		<p class="lead">Choose the service you want to schedule and get started in minutes.</p>
 	</div>
+	<p class="status-alert" *ngIf="unavailableMessage">{{ unavailableMessage }}</p>
 	<div class="options">
 		<div class="option-card">
 			<h3>IT Staffing</h3>
 			<p>Hire skilled IT professionals for temporary or permanent roles.</p>
-			<button type="button">Book IT Staffing</button>
+			<button type="button" (click)="showUnavailable('IT Staffing')">Book IT Staffing</button>
 		</div>
 
 		<div class="option-card">
 			<h3>IT Consulting</h3>
 			<p>Engage experts to assess and improve your IT strategy.</p>
-			<button type="button">Book IT Consulting</button>
+			<button type="button" (click)="showUnavailable('IT Consulting')">Book IT Consulting</button>
 		</div>
 
 		<div class="option-card">
 			<h3>Software Development</h3>
 			<p>Build custom software solutions tailored to your needs.</p>
-			<button type="button">Book Software Development</button>
+			<button type="button" (click)="showUnavailable('Software Development')">Book Software Development</button>
 		</div>
 	</div>
 </section>
