@@ -4,11 +4,12 @@ import { ContactRequestService } from '../shared/contact-request.service';
 import { ContactRequest } from '../shared/contactrequest.model';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-contact-us',
   standalone: true,
-  imports: [FormsModule, HttpClientModule],
+  imports: [CommonModule, FormsModule, HttpClientModule],
   templateUrl: './contact-us.component.html',
   styleUrls: ['./contact-us.component.css']
 })

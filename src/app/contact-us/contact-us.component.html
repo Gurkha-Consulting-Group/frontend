@@ -1,27 +1,72 @@
-<h1>CONTACT US</h1>
-<h3>Initialize request protocol for specialized IT consulting or tactical staffing solutions. Our team will analyze your requirements and provide precision-oriented software development services.</h3>
-<form #contactForm="ngForm" (ngSubmit)="submitRequest()" novalidate>
-  <label>
-    Name
-    <input name="name" [(ngModel)]="contactRequest.name" autocomplete="name" required /> 
-  </label><br/>
-  <label>
-    Work Email
-    <input name="email" [(ngModel)]="contactRequest.email" type="email" autocomplete="email" required />
-  </label><br/>
-  <label>
-    I’m interested in
-    <select name="interest" [(ngModel)]="contactRequest.interest" required>
-      <option value="">Select one</option>
-      <option>Staffing / Team Augmentation</option>
-      <option>Custom Software Development</option>
-      <option>Both</option>
-      <option>Other</option>
-    </select>
-  </label><br/>
-  <label>Details</label><br/>
-  <textarea name="message" [(ngModel)]="contactRequest.message" rows="5" placeholder="Roles needed, timeline, project goals, etc." required></textarea><br/>
-  <button class="btn btn-primary" type="button" (click)="backHome()">Back</button>
-  <button class="btn btn-primary" type="button" (click)="reset()">Reset</button>
-  <button class="btn btn-primary" type="submit" [disabled]="contactForm.invalid">Send</button>
-</form>
+<section class="contact-card">
+  <div class="card-header">
+    <h1>Contact Us</h1>
+    <p class="lead">Request specialized IT consulting, tactical staffing, or bespoke software development. Tell us your goals and timeline.</p>
+  </div>
+
+  <form #contactForm="ngForm" (ngSubmit)="submitRequest()" novalidate class="contact-form">
+    <div class="row">
+      <div class="field">
+        <label class="label">Name</label>
+        <input
+          name="name"
+          [(ngModel)]="contactRequest.name"
+          #name="ngModel"
+          autocomplete="name"
+          required
+          class="input"
+        />
+        <div class="error" *ngIf="name.invalid && (name.dirty || name.touched)">Name is required.</div>
+      </div>
+
+      <div class="field">
+        <label class="label">Email</label>
+        <input
+          name="email"
+          [(ngModel)]="contactRequest.email"
+          #email="ngModel"
+          type="email"
+          autocomplete="email"
+          required
+          class="input"          [class.input-invalid]="email.invalid && (email.dirty || email.touched)"
+          [class.input-valid]="email.valid && email.touched"        />
+        <div class="error" *ngIf="email.invalid && (email.dirty || email.touched)">
+          <span *ngIf="email.errors?.['required']">Email is required.</span>
+          <span *ngIf="email.errors?.['email']">Enter a valid email address.</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="field">
+      <label class="label">I'm interested in</label>
+      <select name="interest" [(ngModel)]="contactRequest.interest" #interest="ngModel" required class="select">
+        <option value="">Select one</option>
+        <option>Staffing / Team Augmentation</option>
+        <option>Custom Software Development</option>
+        <option>Both</option>
+        <option>Other</option>
+      </select>
+      <div class="error" *ngIf="interest.invalid && (interest.dirty || interest.touched)">Please select an interest.</div>
+    </div>
+
+    <div class="field">
+      <label class="label">Details</label>
+      <textarea
+        name="message"
+        [(ngModel)]="contactRequest.message"
+        #message="ngModel"
+        rows="5"
+        placeholder="Roles needed, timeline, project goals, etc."
+        required
+        class="textarea"
+      ></textarea>
+      <div class="error" *ngIf="message.invalid && (message.dirty || message.touched)">Details are required.</div>
+    </div>
+
+    <div class="actions">
+      <button type="button" class="btn ghost" (click)="backHome()">Back</button>
+      <button type="button" class="btn secondary" (click)="reset()">Reset</button>
+      <button type="submit" class="btn primary" [disabled]="contactForm.invalid">Send</button>
+    </div>
+  </form>
+</section>
