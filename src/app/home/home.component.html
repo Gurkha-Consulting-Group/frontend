@@ -1,24 +1,11 @@
 <section class="contact-card">
   <div class="card-header">
     <h1>Home</h1>
-  </div>
-
-  <div class="status-grid">
-    <div class="status-item">
-      <span class="status-label">Today</span>
-      <span class="status-value">{{ dayLabel }}</span>
-    </div>
-    <div class="status-item">
-      <span class="status-label">Time</span>
-      <span class="status-value">{{ timeLabel }}</span>
-      <span class="status-sub">{{ timeZoneLabel }}</span>
-    </div>
-    <div class="status-item">
-      <span class="status-label">Weather</span>
-      <span class="status-value" *ngIf="temperatureC !== null">{{ temperatureC }}°C · {{ weatherSummary }}</span>
-      <span class="status-sub" *ngIf="temperatureC === null">Fetching local weather...</span>
-      <span class="status-sub" *ngIf="addressLabel">{{ addressLabel }}</span>
-      <span class="status-sub">{{ locationLabel }}</span>
+    <div class="status-grid">
+      <div class="status-item">
+        <span class="status-value">{{ dayLabel }}</span>
+        <span class="status-sub">{{ timeLabel }}  {{ timeZoneLabel }}</span>
+      </div>
     </div>
   </div>
 
