@@ -30,14 +30,13 @@ jobs:
           node-version: 20
           cache: npm
 
-      - name: Install deps
+      - name: Install
         run: npm ci
 
-      - name: Build Angular
+      - name: Build
         run: npm run build -- --configuration production --base-href "/${{ github.event.repository.name }}/"
 
-      # IMPORTANT: set path to your actual dist folder:
-      # If your build outputs to dist/frontend, this is correct:
+      # ✅ Upload exactly ONE artifact
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
@@ -46,10 +45,6 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     needs: build
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - name: Deploy
-        id: deployment
+      - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4
