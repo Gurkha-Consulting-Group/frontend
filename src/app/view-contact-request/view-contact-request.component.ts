@@ -16,7 +16,6 @@ export class ViewContactRequestComponent implements OnInit {
   ngOnInit(): void {
     this.contactRequestService.getAllContactRequests().subscribe(
       response=>{
-        console.log('API response:', response);
         this.contactRequests=response;
       },
     error=>{
@@ -26,7 +25,6 @@ export class ViewContactRequestComponent implements OnInit {
   }
 
   backHome(){
-    console.log('Back clicked');
     this.router.navigate(['/home']);
   }
 

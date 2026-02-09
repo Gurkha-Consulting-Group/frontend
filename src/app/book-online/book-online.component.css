@@ -1,0 +1,124 @@
+/* iPhone Glass Theme - Glassmorphism */
+.contact-card {
+  width: 100%;
+  max-width: 100%;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.08);
+  padding: clamp(1rem, 3vw, 1.75rem);
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.card-header h1 {
+  margin: 0 0 0.5rem 0;
+  font-size: clamp(1.5rem, 3.2vw, 2rem);
+  line-height: 1.2;
+  color: #0f172a;
+}
+
+.card-header .lead {
+  margin: 0 0 1.5rem 0;
+  color: #475569;
+  font-size: clamp(0.95rem, 2.2vw, 1.05rem);
+}
+
+.status-alert {
+  margin: 0.5rem 0 1rem 0;
+  padding: 0.75rem 1rem;
+  border-radius: 12px;
+  background: rgba(254, 242, 242, 0.8);
+  border: 1px solid rgba(220, 38, 38, 0.2);
+  color: #dc2626;
+  font-weight: 600;
+  font-size: clamp(0.95rem, 2.2vw, 1.05rem);
+}
+
+.options {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  max-width: none;
+}
+
+.option-card {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 20px;
+  padding: 1rem;
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.option-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(183, 28, 28, 0.15);
+  background: rgba(255, 255, 255, 0.85);
+}
+
+.option-card h3 {
+  margin: 0 0 0.75rem 0;
+  font-size: clamp(1.1rem, 2.6vw, 1.35rem);
+  color: #0f172a;
+  font-weight: 600;
+}
+
+.option-card p {
+  margin: 0 0 1.25rem 0;
+  color: #475569;
+  font-size: clamp(0.95rem, 2.2vw, 1rem);
+  line-height: 1.5;
+}
+
+.option-card button {
+  width: 100%;
+  min-height: 44px;
+  margin-top: 0.75rem;
+  padding: 0.65rem 1rem;
+  background: linear-gradient(135deg, #b71c1c 0%, #991717 100%);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 8px 20px rgba(183, 28, 28, 0.3);
+}
+
+.option-card button:hover {
+  background: linear-gradient(135deg, #991717 0%, #7d1212 100%);
+  box-shadow: 0 12px 28px rgba(183, 28, 28, 0.4);
+  transform: translateY(-2px);
+}
+
+.option-card button:active {
+  background: #7d1212;
+}
+
+.option-card button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+@media (min-width: 768px) {
+  .options {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  .option-card {
+    padding: 1.5rem;
+  }
+
+  .option-card button {
+    width: auto;
+    margin-top: 0;
+  }
+}
+
