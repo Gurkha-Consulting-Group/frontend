@@ -19,21 +19,16 @@ export class ContactUsComponent {
   constructor(private router: Router,private contactRequestService:ContactRequestService) {}
   
   backHome(){
-    console.log('Back clicked');
     this.router.navigate(['/home']);
   }
 
   reset(){
-    console.log('Reset clicked');
     this.contactRequest=new ContactRequest();
   }
 
   submitRequest(){
-    console.log('Submit clicked');
-    console.log('Contact Request Object:', this.contactRequest);
     this.contactRequestService.postContactRequest(this.contactRequest).subscribe(
       response=>{
-        console.log('Contact request submitted successfully:', response);
         alert('Your contact request has been submitted successfully.');
         this.reset();
       },

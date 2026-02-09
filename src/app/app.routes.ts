@@ -5,8 +5,8 @@ import { BookOnlineComponent } from './book-online/book-online.component';
 import { ViewContactRequestComponent } from './view-contact-request/view-contact-request.component';
 
 export const routes: Routes = [
-  { path:"home", component:HomeComponent},
-  { path:"", redirectTo: '/home', pathMatch: 'full'},
+  { path:"", component:HomeComponent},
+  { path:"home", redirectTo: '', pathMatch: 'full'},
   { path:"contact-us", component:ContactUsComponent},
   { path:"book-online", component:BookOnlineComponent},
   {path:"view-contact-request", component:ViewContactRequestComponent}

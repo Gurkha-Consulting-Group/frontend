@@ -13,7 +13,6 @@ export class ContactRequestService {
   constructor(private http:HttpClient) { }
 
   postContactRequest(contactRequest: ContactRequest): Observable<ContactRequest> {
-    console.log('Posting contact request to API:', contactRequest);
     this.url=`${this.baseUrl}/contact`;
     const payload = {
       name: contactRequest.name,
