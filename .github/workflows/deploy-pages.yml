@@ -1,4 +1,4 @@
-name: Deploy Angular (feature branch) to GitHub Pages
+name: Deploy Gurkha Consulting Group website to GitHub Pages
 
 on:
   push:
@@ -23,24 +23,10 @@ jobs:
         uses: actions/checkout@v4
         with:
           ref: feature/contact-reference
-
-      - name: Setup Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
-          cache: npm
-
-      - name: Install
-        run: npm ci
-
-      - name: Build
-        run: npm run build -- --configuration production --base-href "/"
-
-      # ✅ Upload exactly ONE artifact
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: dist/frontend/browser
+          path: site
 
   deploy:
     runs-on: ubuntu-latest
